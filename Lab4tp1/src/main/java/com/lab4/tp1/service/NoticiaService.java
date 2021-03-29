@@ -24,8 +24,8 @@ public class NoticiaService {
 		return noticiaRepository.findById(Id).get();
 	}
 
-	public void saveOrUpdate(Noticia noticia) {
-		noticiaRepository.save(noticia);
+	public Noticia saveOrUpdate(Noticia noticia) {
+		return noticiaRepository.save(noticia);
 	}
 
 	public void delete(Long Id) {

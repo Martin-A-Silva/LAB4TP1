@@ -31,9 +31,7 @@ public class Empresa {
 	@Column(name = "quienes_somos") 
 	private String quienesSomos;
 	
-	
 	private double latitud;
-	
 	
 	private double longitud;
 	

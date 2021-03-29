@@ -44,7 +44,6 @@ public class Noticia {
 	@Column(name = "contenido_html")
 	private String contenidoHTML;
 
-	
 	private char publicada;
 	
 	@Column(name = "fecha_publicacion")
