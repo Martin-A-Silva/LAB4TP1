@@ -51,9 +51,9 @@ public class EmpresaController {
 	}
 
    
-	@PutMapping("/empresa/{empresaid}")
-	public ResponseEntity<?> update(@RequestBody Empresa empresa, @PathVariable Long id){
-		Empresa empresaDb = empresaService.getEmpresaById(id);
+	@PutMapping("/empresa/{empresaId}")
+	public ResponseEntity<?> update(@RequestBody Empresa empresa, @PathVariable Long empresaId){
+		Empresa empresaDb = empresaService.getEmpresaById(empresaId);
 		if(empresaDb == null) {
 			return ResponseEntity.notFound().build();
 		}

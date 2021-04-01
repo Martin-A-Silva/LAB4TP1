@@ -33,7 +33,5 @@ public class EmpresaService {
 		empresaRepository.deleteById(id);
 	}
 
-  	public void update(Empresa empresa, Long empresaId) {
-		empresaRepository.save(empresa);
-	}
+
 }

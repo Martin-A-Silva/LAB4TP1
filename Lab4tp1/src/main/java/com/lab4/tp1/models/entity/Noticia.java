@@ -4,20 +4,15 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table
@@ -35,33 +30,25 @@ public class Noticia {
 	@Column(name = "resumen_de_la_noticia")
 	private String resumenDeLaNoticia;
 
-	@Lob
-	@JsonIgnore
+	@NotEmpty
 	@Column(name = "imagen_noticia")
-	private byte[] imagenNoticia;
+	private String imagenNoticia;
 
 	@NotEmpty
 	@Column(name = "contenido_html")
 	private String contenidoHTML;
-
+	
 	private char publicada;
 	
 	@Column(name = "fecha_publicacion")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaPublicacion;
+		
 	
-	//@ManyToOne(fetch = FetchType.LAZY)
-	//@JoinColumn(name = "id_empresa")
-	@Transient
-	private int idEmpresa;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	@JoinColumn(name = "id_empresa")
 	private Empresa empresa;
 
-	public Integer getFotoHashCode() {
-		return (this.imagenNoticia != null) ? this.imagenNoticia.hashCode(): null;
-	}
 	
 	public Long getId() {
 		return id;
@@ -85,15 +72,7 @@ public class Noticia {
 
 	public void setResumenDeLaNoticia(String resumenDeLaNoticia) {
 		this.resumenDeLaNoticia = resumenDeLaNoticia;
-	}
-
-	public byte[] getImagenNoticia() {
-		return imagenNoticia;
-	}
-
-	public void setImagenNoticia(byte[] imagenNoticia) {
-		this.imagenNoticia = imagenNoticia;
-	}
+	}	
 
 	public String getContenidoHTML() {
 		return contenidoHTML;
@@ -111,21 +90,31 @@ public class Noticia {
 		this.publicada = publicada;
 	}
 
-	public Date getFechaPublicada() {
+	public Date getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicada(Date fechaPublicada) {
-		this.fechaPublicacion = fechaPublicada;
+	public void setFechaPublicacion(Date fechaPublicacion) {
+		this.fechaPublicacion = fechaPublicacion;
 	}
 
-	public int getIdEmpresa() {
-		return idEmpresa;
+	public Empresa getEmpresa() {
+		return empresa;
 	}
 
-	public void setIdEmpresa(int idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
+
+	public String getImagenNoticia() {
+		return imagenNoticia;
+	}
+
+	public void setImagenNoticia(String imagenNoticia) {
+		this.imagenNoticia = imagenNoticia;
+	}
+
+	
 	
 	
 }
