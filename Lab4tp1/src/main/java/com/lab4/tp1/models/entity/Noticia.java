@@ -41,7 +41,7 @@ public class Noticia {
 	private char publicada;
 	
 	@Column(name = "fecha_publicacion")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date fechaPublicacion;
 		
 	
