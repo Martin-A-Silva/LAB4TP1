@@ -60,10 +60,10 @@ public class Empresa {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getHorariosDeAtencion() {
+	public String getHorarioDeAtencion() {
 		return horarioDeAtencion;
 	}
-	public void setHorariosDeAtencion(String horariosDeAtencion) {
+	public void setHorarioDeAtencion(String horarioDeAtencion) {
 		this.horarioDeAtencion = horariosDeAtencion;
 	}
 	public String getQuienesSomos() {
