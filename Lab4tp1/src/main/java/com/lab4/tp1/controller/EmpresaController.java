@@ -60,7 +60,7 @@ public class EmpresaController {
 		
 		empresaDb.setDenominacion(empresa.getDenominacion());
 		empresaDb.setTelefono(empresa.getTelefono());
-		empresaDb.setHorariosDeAtencion(empresa.getHorariosDeAtencion());
+		empresaDb.setHorarioDeAtencion(empresa.getHorarioDeAtencion());
 		empresaDb.setQuienesSomos(empresa.getQuienesSomos());
 		empresaDb.setLatitud(empresa.getLatitud());
 		empresaDb.setLongitud(empresa.getLongitud());
