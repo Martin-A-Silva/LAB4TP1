@@ -18,28 +18,33 @@ public class Empresa {
 	private Long id;
 	
 	@NotEmpty
+	@Column(length = 128)
 	private String denominacion;
 	
 	@NotEmpty
 	private String telefono;
 	
 	@NotEmpty
-	@Column(name = "horario_de_atencion")
+	@Column(name = "horario_de_atencion",length = 256)
 	private String horarioDeAtencion;
 	
 	@NotEmpty
-	@Column(name = "quienes_somos") 
+	@Column(name = "quienes_somos",length = 1024)
 	private String quienesSomos;
 	
+	@Column(precision = 6)
 	private double latitud;
 	
+	@Column(precision = 6)
 	private double longitud;
 	
 	@NotEmpty
+	@Column(length = 256)
 	private String domicilio;
 	
 	@NotEmpty
 	@Email
+	@Column(length = 75)
 	private String email;
 	
 	public Long getId() {
@@ -60,10 +65,10 @@ public class Empresa {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
-	public String getHorariosDeAtencion() {
+	public String getHorarioDeAtencion() {
 		return horarioDeAtencion;
 	}
-	public void setHorariosDeAtencion(String horariosDeAtencion) {
+	public void setHorarioDeAtencion(String horarioDeAtencion) {
 		this.horarioDeAtencion = horariosDeAtencion;
 	}
 	public String getQuienesSomos() {

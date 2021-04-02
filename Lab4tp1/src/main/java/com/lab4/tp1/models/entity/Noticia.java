@@ -23,19 +23,19 @@ public class Noticia {
 	private Long id;
 
 	@NotEmpty
-	@Column(name = "titulo_de_la_noticia")
+	@Column(name = "titulo_de_la_noticia", length = 128)
 	private String tituloDeLaNoticia;
 
 	@NotEmpty
-	@Column(name = "resumen_de_la_noticia")
+	@Column(name = "resumen_de_la_noticia", length = 1024)
 	private String resumenDeLaNoticia;
 
 	@NotEmpty
-	@Column(name = "imagen_noticia")
+	@Column(name = "imagen_noticia", length = 128)
 	private String imagenNoticia;
 
 	@NotEmpty
-	@Column(name = "contenido_html")
+	@Column(name = "contenido_html", length = 20480)
 	private String contenidoHTML;
 	
 	private char publicada;
