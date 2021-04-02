@@ -69,7 +69,7 @@ public class Empresa {
 		return horarioDeAtencion;
 	}
 	public void setHorarioDeAtencion(String horarioDeAtencion) {
-		this.horarioDeAtencion = horariosDeAtencion;
+		this.horarioDeAtencion = horarioDeAtencion;
 	}
 	public String getQuienesSomos() {
 		return quienesSomos;
